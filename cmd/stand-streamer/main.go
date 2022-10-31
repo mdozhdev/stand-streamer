@@ -30,6 +30,8 @@ func main() {
 	configFile := flag.String("c", "master-setup.yaml", "config yaml file to use")
 	baseUrl := flag.String("baseUrl", "rtmp://master-setup:30900/stream-test", "Base url to stream to")
 
+	flag.Parse()
+
 	c, err := readConf(*configFile)
 	if err != nil {
 		fmt.Println(err)

@@ -1,7 +1,7 @@
 include:
   - project: "re/ci"
     ref: v3
-    file: "/pipelines/docker.yml"
+    file: "/pipelines/base.yml"
 
 .config:
   variables:
