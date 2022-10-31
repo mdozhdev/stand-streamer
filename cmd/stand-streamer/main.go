@@ -32,6 +32,8 @@ func main() {
 
 	flag.Parse()
 
+	fmt.Printf("Staring with %s config.\n", *configFile)
+
 	c, err := readConf(*configFile)
 	if err != nil {
 		fmt.Println(err)
