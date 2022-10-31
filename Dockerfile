@@ -9,7 +9,7 @@ RUN go mod download
 
 COPY cmd/stand-streamer/*.go ./
 
-RUN go build -o /go/bin/stand-streamer
+RUN CGO_ENABLED=0 go build -o /go/bin/stand-streamer
 FROM debian:bullseye-slim as app
 
 COPY --from=build /go/bin/stand-streamer /usr/bin/stand-streamer
