@@ -1,0 +1,8 @@
+include:
+  - project: "re/ci"
+    ref: v3
+    file: "/pipelines/docker.yml"
+
+.config:
+  variables:
+    VAR_DOCKER_TARGETS: "app"
