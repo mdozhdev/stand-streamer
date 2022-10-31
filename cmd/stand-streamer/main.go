@@ -39,16 +39,18 @@ func main() {
 		fmt.Println(err)
 	}
 
-	for _, turn := range c.Tunrnarounds {
-		if turn.Status == "enabled" {
+	for {
+		for _, turn := range c.Tunrnarounds {
+			if turn.Status == "enabled" {
 
-			if turn.Fligthstatus != "none" {
-				// send Flightstatus
-			}
+				if turn.Fligthstatus != "none" {
+					// send Flightstatus
+				}
 
-			for _, cam := range turn.Stand.Cameras {
-				wg.Add(1)
-				go stream(cam.Name, cam.File, *baseUrl, &wg)
+				for _, cam := range turn.Stand.Cameras {
+					wg.Add(1)
+					go stream(cam.Name, cam.File, *baseUrl, &wg)
+				}
 			}
 		}
 	}
