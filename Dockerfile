@@ -14,4 +14,4 @@ FROM debian:bullseye-slim as app
 
 COPY --from=build /go/bin/stand-streamer /usr/bin/stand-streamer
 
-# ENTRYPOINT ["/usr/bin/stand-streamer"]
+ENTRYPOINT ["/usr/bin/stand-streamer"]
