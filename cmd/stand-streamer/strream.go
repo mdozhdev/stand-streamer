@@ -89,6 +89,7 @@ func stream(name, src, baseUrl string, wg *sync.WaitGroup) {
 		return
 	}
 
+	fmt.Printf("%s: %s\n", name, pkt.String())
 	if err = fw.WritePacket(pkt); err != nil {
 		fmt.Println(name, ": Error writing DecoderConfig packet: ", err)
 		return

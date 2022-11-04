@@ -19,8 +19,7 @@ type Conf struct {
 				File string `yaml:"file" json:"file"`
 			}
 		}
-		Fligthstatus string
-		Status       string `yaml:"status" json:"status"`
+		Status string `yaml:"status" json:"status"`
 	}
 }
 
@@ -39,18 +38,12 @@ func main() {
 		fmt.Println(err)
 	}
 
-	for {
-		for _, turn := range c.Tunrnarounds {
-			if turn.Status == "enabled" {
+	for _, turn := range c.Tunrnarounds {
+		if turn.Status == "enabled" {
 
-				if turn.Fligthstatus != "none" {
-					// send Flightstatus
-				}
-
-				for _, cam := range turn.Stand.Cameras {
-					wg.Add(1)
-					go stream(cam.Name, cam.File, *baseUrl, &wg)
-				}
+			for _, cam := range turn.Stand.Cameras {
+				wg.Add(1)
+				go stream(cam.Name, cam.File, *baseUrl, &wg)
 			}
 		}
 	}

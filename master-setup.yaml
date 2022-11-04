@@ -1,20 +1,18 @@
 ---
 tunrnarounds:
   - stand:
-      name: sea-d7
+      name: stand-a-1
       cameras:
-        - name: sea-d7-s
-          file: sea-d7-s-two-turns.mp4
-        - name: sea-d7-p
-          file: sea-d7-p-two-turns.mp4
-    fligthstatus: none
+        - name: stand-a-1-left
+          file: stand-a-1-left-two-turns.mp4
+        - name: stand-a-1-right
+          file: stand-a-1-right-two-turns.mp4
     status: enabled
   - stand:
-      name: sea-d9
+      name: stand-a-2
       cameras:
-        - name: sea-d9-s
-          file: sea-d9-s.mp4
-        - name: sea-d9-p
-          file: sea-d9-p.mp4
-    fligthstatus: none
+        - name: stand-a-2-right
+          file: stand-a-2-right.mp4
+        - name: stand-a-2-left
+          file: stand-a-2-left.mp4
     status: disabled
